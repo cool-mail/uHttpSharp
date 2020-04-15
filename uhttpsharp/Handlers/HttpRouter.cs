@@ -29,8 +29,8 @@ namespace uhttpsharp.Handlers {
 
             if (context.Request.RequestParameters.Length > 0) function = context.Request.RequestParameters[0];
 
-            IHttpRequestHandler value;
-            if (_handlers.TryGetValue(function, out value)) return value.Handle(context, nextHandler);
+            if (_handlers.TryGetValue(function, out IHttpRequestHandler value))
+                return value.Handle(context, nextHandler);
 
             // Route not found, Call next.
             return nextHandler();

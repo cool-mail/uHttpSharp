@@ -117,6 +117,7 @@ namespace uhttpsharp {
 
             // Empty Line
             await writer.WriteLineAsync().ConfigureAwait(false);
+            await writer.FlushAsync().ConfigureAwait(false);
 
             // Body
             await response.WriteBody(writer).ConfigureAwait(false);
