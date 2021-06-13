@@ -19,7 +19,7 @@ namespace uhttpsharp.Headers {
             for (var i = 0; i < splittedKeyValues.Length; i += 2) {
                 var key = Uri.UnescapeDataString(splittedKeyValues[i]);
                 string value = null;
-                if (splittedKeyValues.Length > i + 1) value = Uri.UnescapeDataString(splittedKeyValues[i + 1]).Replace('+', ' ');
+                if (splittedKeyValues.Length > i + 1) value = Uri.UnescapeDataString(splittedKeyValues[i + 1]);
 
                 values[key] = value;
             }
